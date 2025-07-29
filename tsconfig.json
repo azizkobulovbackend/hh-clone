@@ -18,12 +18,10 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/prisma": [
-        "libs/prisma/src"
-      ],
-      "@app/prisma/*": [
-        "libs/prisma/src/*"
-      ]
+      "@app/prisma": ["libs/prisma/src"],
+      "@app/prisma/*": ["libs/prisma/src/*"]
     }
-  }
+  },
+  "include": ["apps/**/*", "libs/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
