@@ -20,8 +20,8 @@ export class NotificationService {
       host: 'smtp.gmail.com',
       port: 587,
       auth: {
-        user: process.env.SMTP_USER ?? 'azizkobulovbackend@gmail.com',
-        pass: process.env.SMTP_PASS ?? 'wavnvetevsxjyzjf',
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
