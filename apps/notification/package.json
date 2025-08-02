@@ -5,13 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nest start --watch"
+    "build": "nest build chakana",
+    "start:dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/main.ts",
+    "prisma:generate": "npx prisma generate --schema ./prisma/schema.prisma",
+    "prisma:migrate:dev": "npx prisma migrate dev --schema ./prisma/schema.prisma",
+    "prisma:migrate:deploy": "npx prisma migrate deploy --schema ./prisma/schema.prisma",
+    "start": "nest start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.12.4",
   "dependencies": {
-    "@golevelup/nestjs-rabbitmq": "^6.0.1"
+    "@golevelup/nestjs-rabbitmq": "^6.0.1",
+    "@types/nodemailer": "^6.4.17",
+    "nodemailer": "^7.0.5"
   }
 }

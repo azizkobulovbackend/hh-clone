@@ -20,10 +20,20 @@
     "test:e2e": "jest --config ./apps/hh/test/jest-e2e.json"
   },
   "dependencies": {
+    "@golevelup/nestjs-rabbitmq": "^6.0.1",
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/swagger": "^11.2.0",
     "@prisma/client": "^6.12.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "config": "link:@@nestjs/config",
+    "nestjs-pino": "^4.4.0",
+    "pino-abstract-transport": "^2.0.0",
+    "pino-http": "^10.5.0",
+    "pino-pretty": "^13.1.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
@@ -53,6 +63,7 @@
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.20.0"
   },
@@ -77,6 +88,9 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@app/decorators(|/.*)$": "<rootDir>/libs/decorators/src/$1",
+      "^@app/interceptors(|/.*)$": "<rootDir>/libs/interceptors/src/$1",
+      "^@app/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
       "^@app/prisma(|/.*)$": "<rootDir>/libs/prisma/src/$1"
     }
   }
